@@ -30,6 +30,9 @@ Esto para que se pueda instalar todo en el entorno virtual:
 pip install -r requirements.txt
 
 
+
+
+
 MariaDB [(none)]> SHOW TABLES;
 ERROR 1046 (3D000): No database selected
 MariaDB [(none)]> USE contacts.db
