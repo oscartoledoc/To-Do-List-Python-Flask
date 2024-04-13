@@ -16,3 +16,7 @@ usaré pip install mysqlclient para la BBDD también (me va a permitir conectarm
 
 venv\scripts\activate
 set FLASK_DEBUG=1
+
+Para moverme a mi root y ver la tabla que cree:
+cd C:\xampp\mysql\bin
+mysql -u root -p
