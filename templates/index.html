@@ -8,3 +8,15 @@
 
 
 </form>
+
+<div>
+    {% for contact in contacts %}
+
+        <div>
+            <h5>{{contact.fullname}}</h5>
+            <p>{{contact.email}}</p>
+            <p>{{contact.phone}}</p>
+        </div>
+
+    {% endfor %}
+</div>
