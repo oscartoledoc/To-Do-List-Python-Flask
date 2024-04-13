@@ -21,6 +21,13 @@ Para moverme a mi root y ver la tabla que cree:
 cd C:\xampp\mysql\bin
 mysql -u root -p
 
+NOTA: .gitignore para evitar que rastreé el caché.  
+
+Puedes redirigir la salida a un archivo de texto si deseas guardar la lista de bibliotecas instaladas en un archivo:
+pip freeze > requirements.txt
+
+Esto para que se pueda instalar todo en el entorno virtual:
+pip install -r requirements.txt
 
 
 MariaDB [(none)]> SHOW TABLES;
