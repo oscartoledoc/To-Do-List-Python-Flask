@@ -20,3 +20,70 @@ set FLASK_DEBUG=1
 Para moverme a mi root y ver la tabla que cree:
 cd C:\xampp\mysql\bin
 mysql -u root -p
+
+
+
+MariaDB [(none)]> SHOW TABLES;
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> USE contacts.db
+ERROR 1049 (42000): Unknown database 'contacts.db'
+MariaDB [(none)]> USE contactsdb;
+Database changed
+MariaDB [contactsdb]> SHOW TABLES;
+Empty set (0.038 sec)
+
+MariaDB [contactsdb]> CREATE Contact;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Contact' at line 1
+MariaDB [contactsdb]> SHOW TABLES;
+Empty set (0.003 sec)
+
+MariaDB [contactsdb]> SHOW TABLES;
++----------------------+
+| Tables_in_contactsdb |
++----------------------+
+| alembic_version      |
+| contact              |
++----------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [contactsdb]> SELECT * FROM contact
+    -> Bye
+Ctrl-C -- exit!
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 14
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE contactsdb;
+Database changed
+MariaDB [contactsdb]> SHOW TABLES;
++----------------------+
+| Tables_in_contactsdb |
++----------------------+
+| alembic_version      |
+| contact              |
++----------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [contactsdb]> SELECT * FROM contact;
++----+----------+---------------------------+-----------+
+| id | fullname | email                     | phone     |
++----+----------+---------------------------+-----------+
+|  1 | Oscar    | oscartoledo1799@gmail.com | 932494159 |
++----+----------+---------------------------+-----------+
+1 row in set (0.001 sec)
+
+MariaDB [contactsdb]> SELECT * FROM contact;
++----+----------+---------------------------+-----------+
+| id | fullname | email                     | phone     |
++----+----------+---------------------------+-----------+
+|  1 | Oscar    | oscartoledo1799@gmail.com | 932494159 |
+|  2 | Oscar    | oscartoledo1799@gmail.com | 932494159 |
++----+----------+---------------------------+-----------+
+2 rows in set (0.022 sec)
