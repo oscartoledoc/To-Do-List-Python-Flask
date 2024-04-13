@@ -1,0 +1,5 @@
+*.pyc
+.env
+env.sh
+*.log
+*.out
