@@ -29,8 +29,13 @@ pip freeze > requirements.txt
 Esto para que se pueda instalar todo en el entorno virtual:
 pip install -r requirements.txt
 
+Cuando ves la dirección 127.0.0.1:5000 en el resultado de la ejecución de tu aplicación Flask, significa que la aplicación está en funcionamiento y lista para recibir solicitudes en tu propia máquina, en el puerto 5000. Puedes acceder a tu aplicación abriendo un navegador web y visitando http://127.0.0.1:5000 o simplemente http://localhost:5000.
 
+CTRL + } para comentar en html
 
+############################
+COMO LE METO JAVASCRIPT PARA VENTANAS EMERGENTES AL REALIZAR OPERACIONES CRUD
+############################
 
 
 MariaDB [(none)]> SHOW TABLES;

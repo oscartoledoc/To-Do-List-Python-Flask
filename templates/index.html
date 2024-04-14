@@ -1,22 +1,48 @@
-<form action="/new" method="post">
-
-    <input type="text" name="fullname" placeholder="Write your fullname">
-    <input type="text" name="email" placeholder="Write your email">
-    <input type="text" name="phone" placeholder="Write your phone">
-
-    <button>Save</button>
+<!-- To heredit layout.html -->
+{% extends 'layout.html' %} 
 
 
-</form>
+{% block body %}
 
-<div>
-    {% for contact in contacts %}
 
-        <div>
-            <h5>{{contact.fullname}}</h5>
-            <p>{{contact.email}}</p>
-            <p>{{contact.phone}}</p>
-        </div>
+    {% with messages = get_flashed_messages() %}
 
-    {% endfor %}
-</div>
+        {% if messages %}
+
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+
+        {% endif %}
+
+    {% endwith %}
+
+
+    <form action="/new" method="post">
+
+        <input type="text" name="fullname" placeholder="Write your fullname">
+        <input type="text" name="email" placeholder="Write your email">
+        <input type="text" name="phone" placeholder="Write your phone">
+
+        <button>Save</button>
+
+    </form>
+
+    <div>
+        {% for contact in contacts %}
+
+            <div>
+                <h5>{{contact.fullname}}</h5>
+
+                <!-- To move to function in contacts -->
+                <a href="{{ url_for('contacts.update', id=contact.id) }}">Update</a> 
+                <a href="{{ url_for('contacts.delete', id=contact.id) }}">Delete</a>
+                <p>{{contact.email}}</p>
+                <p>{{contact.phone}}</p>
+            </div>
+
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
