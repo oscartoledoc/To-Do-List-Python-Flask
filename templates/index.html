@@ -5,44 +5,46 @@
 {% block body %}
 
 
-    {% with messages = get_flashed_messages() %}
+    <div class="row">
+        <div class="col-md-5">
 
-        {% if messages %}
+            {% include 'partials/_message.html'%}
 
-            {% for message in messages %}
-                {{message}}
-            {% endfor %}
+            {% include 'partials/_contactForm.html' %}
 
-        {% endif %}
+        </div>
 
-    {% endwith %}
+        <div class="col-md-7">
 
+                {% for contact in contacts %}
+        
+                    <div class="card mb-1 text-white bg-dark">
 
-    <form action="/new" method="post">
+                        <div class="card-body">
 
-        <input type="text" name="fullname" placeholder="Write your fullname">
-        <input type="text" name="email" placeholder="Write your email">
-        <input type="text" name="phone" placeholder="Write your phone">
+                            <div class="d-flex justify-content-between">
+                                <h5>{{contact.fullname}}</h5>
+                                
+                                <div>
+                                    <!-- To move to function in contacts -->
+                                    <a href="{{ url_for('contacts.update', id=contact.id) }}" class="btn bg-black text-white btn-sm rounded-1">Update</a> 
+                                    <a href="{{ url_for('contacts.delete', id=contact.id) }}" class="btn btn-danger btn-sm rounded-1">Delete</a>
+                                </div>
 
-        <button>Save</button>
+                            </div>
 
-    </form>
+                            <p>{{contact.email}}</p>
+                            <p>{{contact.phone}}</p>
+                        </div>
 
-    <div>
-        {% for contact in contacts %}
+                    </div>
+        
+                {% endfor %}
 
-            <div>
-                <h5>{{contact.fullname}}</h5>
+        </div>
 
-                <!-- To move to function in contacts -->
-                <a href="{{ url_for('contacts.update', id=contact.id) }}">Update</a> 
-                <a href="{{ url_for('contacts.delete', id=contact.id) }}">Delete</a>
-                <p>{{contact.email}}</p>
-                <p>{{contact.phone}}</p>
-            </div>
-
-        {% endfor %}
     </div>
+
 
 
 {% endblock %}

@@ -3,3 +3,5 @@
 env.sh
 *.log
 *.out
+__pycache__
+venv
