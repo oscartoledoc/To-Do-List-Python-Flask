@@ -6,7 +6,7 @@
 
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
 
             {% include 'partials/_message.html'%}
 
@@ -14,8 +14,10 @@
 
         </div>
 
-        <div class="col-md-8">
-
+        <div class="col-md-3">
+            <div class="badge text-bg-primary text-wrap" style="width: 10rem; --bs-badge-padding-y: 0.5em; --bs-badge-font-size: 0.9em;">
+                Para hacer
+            </div>
                 {% for contact in contacts %}
         
                     <div class="card mb-1 text-white bg-dark">
@@ -41,6 +43,27 @@
         
                 {% endfor %}
 
+
+        </div>
+
+        <div class="col-md-3">
+            <div class="badge text-wrap"  style="width: 10rem; background-color:rgb(225, 225, 25); --bs-badge-padding-y: 0.5em;--bs-badge-font-size: 0.9em">
+                En proceso
+            </div>
+
+            <div class="card mb-1 text-white bg-dark text-center">
+                <h1>Holaaaaa</h1>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="badge text-wrap" style="width: 10rem; background-color:greenyellow; --bs-badge-padding-y: 0.5em;--bs-badge-font-size: 0.9em;">
+                Terminado
+            </div>
+
+            <div class="card mb-1 text-white bg-dark text-center">
+                <h1>Holaaaaa</h1>
+            </div>
         </div>
 
     </div>
