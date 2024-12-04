@@ -5,3 +5,10 @@ body {
 .bg-black {
     background: #090909;
 }
+
+.wraps.badge.text-wrap {
+    background-color:rgb(225, 225, 25);
+    width: 10rem; 
+    --bs-badge-padding-y: 0.5em;
+    --bs-badge-font-size: 0.9em;
+}
