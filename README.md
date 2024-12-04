@@ -14,8 +14,9 @@ instalaré SQLAlquemy tmb
 
 usaré pip install mysqlclient para la BBDD también (me va a permitir conectarme a SQL)
 
+MOVERME AL DIRECTORIO DEL PROYECTO
 venv\scripts\activate
-set FLASK_DEBUG=1
+flask --debug run
 
 Para moverme a mi root y ver la tabla que cree:
 cd C:\xampp\mysql\bin
